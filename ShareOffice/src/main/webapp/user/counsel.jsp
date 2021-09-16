@@ -38,7 +38,8 @@
 					<table class="table table-stariped" style="text-align: center; border: 1px solid #dddddd">
 						<thead>
 							<tr>
-								<th colspan="1" style="backgraound-color: #eeeeee; text-align: center; width: 500px">상담 신청 양식</th>
+								<th colspan="1" style="backgraound-color: #eeeeee;
+								text-align: center; width: 500px">상담 신청 양식</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -46,26 +47,30 @@
 								<td style="text-align: left;">답변 받을 email</td>
 							</tr>
 							<tr>
-								<td><input type="text" class="form-control" placeholder="답변받을 email" name="sUseremail" maxlength="50" required></td>
+								<td><input type="text" class="form-control" placeholder="답변받을 email"
+								name="sUseremail" maxlength="50" required></td>
 							</tr>
 							<tr>
 								<td style="text-align: left;">글 제목</td>
 							</tr>
 							<tr>
-								<td><input type="text" class="form-control" placeholder="글 제목" name="sSubject" maxlength="50"  required></td>
+								<td><input type="text" class="form-control" placeholder="글 제목"
+								name="sSubject" maxlength="50"  required></td>
 							</tr>
 							<tr>
 								<td style="text-align: left;">내용</td>
 							</tr>
 							<tr>
-								<td><textarea class="form-control" placeholder="글 내용" name="sContent" rows="15" maxlength="2048"  required></textarea></td>
+								<td><textarea class="form-control" placeholder="글 내용" name="sContent"
+								rows="15" maxlength="2048"  required></textarea></td>
 							</tr>
 						</tbody>
 					</table>
 					<div style="float:right;">
 						<input type="submit" class="btn btn-primary" value="글쓰기">
-						<a style="float:right;">&nbsp;</a>
-						<input type="submit" class="btn btn-primary" value="취소" onclick="location.href='../pagemain/mainpage.jsp'">
+						<a style="float:right;"></a>&nbsp;
+						<input type="submit" class="btn btn-primary" value="돌아가기"
+						onclick="location.href='../pagemain/mainpage.jsp'">
 					</div>
 					
 				</form>
