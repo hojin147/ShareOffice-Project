@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
 import="java.sql.*" import="office.*" import="java.util.ArrayList" import="java.io.PrintWriter"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -166,6 +167,175 @@ import="java.sql.*" import="office.*" import="java.util.ArrayList" import="java.
 							<input class="input3" type="text" name="cBuznum"
 								value="<%=company.getcBuznum()==null?"":company.getcBuznum()%>">
 								<span class="focus-input3"></span>
+=======
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*"%>
+<%@ page import="office.*"%>
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="java.io.PrintWriter"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<jsp:useBean id="userDAO" class="dao.UserDAO" scope="page" />
+<jsp:useBean id="companyDAO" class="dao.CompanyDAO" scope="page" />
+<jsp:useBean id="officeDAO" class="dao.OfficeDAO" scope="page" />
+<jsp:useBean id="buildingDAO" class="dao.BuildingDAO" scope="page" />
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<title>오피스 예약</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"></script>
+	<link rel="stylesheet" type="text/css"
+		href="../vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css"
+		href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css"
+		href="../vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css"
+		href="../vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css"
+		href="../vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/util.css">
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/styles.css">
+	<link rel="stylesheet" href="../css/tablestyles.css">
+</head>
+<body>
+
+	<%@ include file="../pagemain/mainpage_nav.jsp"%>
+
+	<div class="bg-contact3"
+		style="background-image: url('../assets/img/main_slider_img_01.jpg');"
+		id="dropDownSelect1">
+		<div class="container-contact3">
+			<section>
+				<div class="wrap-contact3">
+					<%
+						//세션 값 불러오기
+						String cEmail = (String) session.getAttribute("uEmail");
+						PrintWriter script = response.getWriter();
+						//로그인이 되었는지 안되었는지 판단
+						if (cEmail == null) {
+							script.println("<script>");
+							script.println("alert('로그인 후 이용해주세요')");
+							script.println("location.href='../pagemain/mainpage.jsp'");
+							script.println("</script>");
+						}
+					%>
+					<form id="from-1" class="contact3-form validate-form" method="post"
+						action="./reservationAction.jsp">
+						<span class="contact3-form-title"> 오피스 예약 </span>
+
+						<div class="wrap-contact3-form-radio">
+							<div class="contact3-form-radio m-r-42">
+								<input class="input-radio3" id="radio1" type="radio"
+									name="rvType" value="개인" checked onClick="companyOff()"> <label
+									class="label-radio3" for="radio1"> 개인 </label>
+							</div>
+							<div class="contact3-form-radio">
+								<input class="input-radio3" id="radio2" type="radio"
+									name="rvType" value="기업" onClick="companyOn()"> <label class="label-radio3"
+									for="radio2" > 기업 </label>
+							</div>
+						</div>
+						<%
+							ArrayList<Building> buildingArr = buildingDAO.selectBuildingAll();
+						%>
+						<div>
+							<select id="building" class="selection-2" name="rvBname" required
+								onchange="officeCategory();officeList();">
+								<optgroup label="지점 선택">
+									<c:forEach var="building" items="<%=buildingArr%>"
+										varStatus="status">
+										<option value="${building.getbName()}">${building.getbName()}</option>
+									</c:forEach>
+								</optgroup>
+							</select>
+							<hr style="color: white;">
+						</div>
+						<div class="wrap-input3 validate-input">
+						<div class="d-flex">
+							<div class="col-sm" style="padding-left:0px;">
+								<select id="personSelect" class="selection-2" required onchange="officeList()">
+								</select>
+							</div>
+							
+							<div class="col-sm" style="padding-right:0px;">
+								<select id="officeSelect" class="selection-2" name="rvOname" required>
+								</select>
+							</div>
+							<hr style="color: white;">
+						</div>
+						</div>
+						<div>
+							<select class="selection-2" name="rvPeriod" required>
+								<optgroup label="기간 선택(1개월 단위)">
+									<option value="1">1개월</option>
+									<option value="2">2개월</option>
+									<option value="3">3개월</option>
+									<option value="4">4개월</option>
+									<option value="5">5개월</option>
+									<option value="6">6개월(5% 할인)</option>
+									<option value="7">7개월(5% 할인)</option>
+									<option value="8">8개월(5% 할인)</option>
+									<option value="9">9개월(5% 할인)</option>
+									<option value="10">10개월(5% 할인)</option>
+									<option value="11">11개월(5% 할인)</option>
+									<option value="12">12개월(10% 할인)</option>
+								</optgroup>
+							</select>
+							<hr style="color: white;">
+						</div>
+						<div class="wrap-input3 validate-input">
+							<span class="form-label" style="font-size: 15px; color: white;">입주
+								날짜<br></br>
+							</span> <input class="form-control" type=month name="rvIndate" required>
+						</div>
+						<hr style="color: white;">
+
+						<%
+							User_account user1 = userDAO.selectOneuser(cEmail);
+						%>
+
+						<div class="wrap-input3 validate-input"
+							data-validate="Valid email is required: ex@abc.xyz">
+							<p style="font-size: 15px; color: white;">&nbsp;EMAIL</p>
+							<input class="input3" type="text" name="uEmail"
+								value="<%=user1.getuEmail()%>" required readonly> <span
+								class="focus-input3"></span>
+						</div>
+						<div class="wrap-input3 validate-input"
+							data-validate="Valid email is required: ex@abc.xyz">
+							<p style="font-size: 15px; color: white;">&nbsp;이름</p>
+							<input class="input3" type="text" name="uName"
+								value="<%=user1.getuName()%>" required readonly> <span
+								class="focus-input3"></span>
+						</div>
+						<div class="wrap-input3 validate-input"
+							data-validate="phone is required">
+							<p style="font-size: 15px; color: white;">&nbsp;연락처</p>
+							<input class="input3" type="text" name="uPhone"
+								value="<%=user1.getuPhone()%>" required readonly> <span
+								class="focus-input3"></span>
+						</div>
+						<%
+							userDAO.close();
+							Companyinfo_history company = companyDAO.selectLatestCompany(cEmail);
+						%>
+						<div class="wrap-input3 input3-select">
+							<p style="font-size: 15px; color: white;">&nbsp;기업명</p>
+							<input class="input3" type="text" name="cName"
+								value="<%=company.getcName()==null?"":company.getcName()%>"> <span
+								class="focus-input3"></span>
+						</div>
+						<div class="wrap-input3 input3-select">
+							<p style="font-size: 15px; color: white;">&nbsp;사업자등록번호</p>
+							<input class="input3" type="text" name="cBuznum"
+								value="<%=company.getcBuznum()==null?"":company.getcBuznum()%>"> <span
+								class="focus-input3"></span>
+>>>>>>> refs/remotes/origin/main
 						</div>
 
 						<div class="wrap-input3 input3-select">
