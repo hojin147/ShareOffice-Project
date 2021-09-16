@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
 import="java.sql.*" import="office.*" import="java.util.ArrayList" import="java.io.PrintWriter"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>

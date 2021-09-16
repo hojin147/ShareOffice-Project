@@ -1,7 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="office.Reservation" %>
-<%@ page import="office.User_account" %>
-<%@ page import="java.sql.*" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
+import="office.Reservation" import="office.User_account" import="java.sql.*" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <jsp:useBean id="reservationDAO" class="dao.ReservationDAO" scope="page" />
 <jsp:useBean id="userDAO" class="dao.UserDAO" scope="page" />

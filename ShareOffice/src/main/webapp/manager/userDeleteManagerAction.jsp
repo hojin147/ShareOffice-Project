@@ -1,9 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="java.sql.*" %>
-<%@ page import="dao.UserDAO" %>
-<%@ page import="office.User_account" %>
-<%@ page import="dao.UserDAO" %>
-<%@ page import="java.io.PrintWriter" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
+import="java.sql.*" import="dao.UserDAO" import="office.User_account"
+import="dao.UserDAO" import="java.io.PrintWriter" %>
 <%request.setCharacterEncoding("UTF-8"); %>
 <jsp:useBean id="user1" class="dao.UserDAO" scope="page" />
 <jsp:useBean id="user" class="office.User_account" scope="page" />
