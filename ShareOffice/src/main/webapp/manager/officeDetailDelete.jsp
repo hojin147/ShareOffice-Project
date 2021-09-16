@@ -2,11 +2,8 @@
 import="dao.OfficeDAO" import="java.io.PrintWriter" %>
 <%request.setCharacterEncoding("UTF-8"); %>
 <jsp:useBean id="office" class="office.Office" scope="page" />
-<jsp:setProperty name="office" property="oNum" />
-<jsp:setProperty name="office" property="oName" />
-<jsp:setProperty name="office" property="oFloor" />
-<jsp:setProperty name="office" property="oPeople" />
-<jsp:setProperty name="office" property="oMonthlyRent" />
+<jsp:setProperty name="office" property="oNum" property="oName"
+property="oFloor" property="oPeople" property="oMonthlyRent" />
 <!DOCTYPE html>
 <html>
 <head>

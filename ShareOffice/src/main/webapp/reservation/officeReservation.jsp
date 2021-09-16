@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
 import="java.sql.*" import="office.*" import="java.util.ArrayList" import="java.io.PrintWriter"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<jsp:useBean id="userDAO" class="dao.UserDAO" scope="page" />
-<jsp:useBean id="companyDAO" class="dao.CompanyDAO" scope="page" />
-<jsp:useBean id="officeDAO" class="dao.OfficeDAO" scope="page" />
-<jsp:useBean id="buildingDAO" class="dao.BuildingDAO" scope="page" />
+<jsp:useBean id="userDAO" class="dao.UserDAO" scope="page" 
+id="companyDAO" class="dao.CompanyDAO" scope="page" 
+id="officeDAO" class="dao.OfficeDAO" scope="page"
+id="buildingDAO" class="dao.BuildingDAO" scope="page" />
 <!DOCTYPE html>
 <html lang="ko">
 <head>

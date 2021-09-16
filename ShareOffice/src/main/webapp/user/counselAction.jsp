@@ -2,9 +2,8 @@
 import="dao.CounselDAO" import="java.io.PrintWriter" %>
 <%request.setCharacterEncoding("UTF-8"); %>
 <jsp:useBean id="coun" class="office.Counsel" scope="page" />
-<jsp:setProperty name="coun" property="sUseremail" />
-<jsp:setProperty name="coun" property="sSubject" />
-<jsp:setProperty name="coun" property="sContent" />
+<jsp:setProperty name="coun" property="sUseremail" 
+property="sSubject" property="sContent" />
 <!DOCTYPE html>
 <html>
 <head>

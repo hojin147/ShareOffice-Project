@@ -2,12 +2,10 @@
 import="java.sql.*" import="dao.UserDAO" import="office.User_account"
 import="dao.UserDAO" import="java.io.PrintWriter" %>
 <%request.setCharacterEncoding("UTF-8"); %>
-<jsp:useBean id="user1" class="dao.UserDAO" scope="page" />
-<jsp:useBean id="user" class="office.User_account" scope="page" />
-<jsp:setProperty name="user" property="uEmail" />
-<jsp:setProperty name="user" property="uPassword" />
-<jsp:setProperty name="user" property="uName" />
-<jsp:setProperty name="user" property="uPhone" />
+<jsp:useBean id="user1" class="dao.UserDAO" scope="page"
+id="user" class="office.User_account" scope="page" />
+<jsp:setProperty name="user" property="uEmail" property="uPassword"
+property="uName" property="uPhone" />
 <!DOCTYPE html>
 <html>
 <head>

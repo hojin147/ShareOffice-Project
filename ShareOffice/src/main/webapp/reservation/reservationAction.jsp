@@ -1,15 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@page import="office.*"%>
-<%@page import="java.sql.Date"%>
-<%@page import="java.util.Calendar"%>
-<%@page import="java.io.PrintWriter"%>
+pageEncoding="UTF-8" import="office.*" import="java.sql.Date"
+import="java.util.Calendar" import="java.io.PrintWriter"%>
 <%request.setCharacterEncoding("UTF-8");%>
-<jsp:useBean id="userDAO" class="dao.UserDAO" scope="page" />
-<jsp:useBean id="companyDAO" class="dao.CompanyDAO" scope="page" />
-<jsp:useBean id="officeDAO" class="dao.OfficeDAO" scope="page" />
-<jsp:useBean id="buildingDAO" class="dao.BuildingDAO" scope="page" />
-<jsp:useBean id="reservationDAO" class="dao.ReservationDAO" scope="page" />
+<jsp:useBean id="userDAO" class="dao.UserDAO" scope="page" 
+id="companyDAO" class="dao.CompanyDAO" scope="page" 
+id="officeDAO" class="dao.OfficeDAO" scope="page" 
+id="buildingDAO" class="dao.BuildingDAO" scope="page" 
+id="reservationDAO" class="dao.ReservationDAO" scope="page" />
 <%
 	PrintWriter writer = response.getWriter();
 	

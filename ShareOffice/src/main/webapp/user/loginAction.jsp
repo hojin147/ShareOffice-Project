@@ -1,10 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
 import="dao.UserDAO" import="office.User_account" import="java.io.PrintWriter" %>
 <%request.setCharacterEncoding("UTF-8"); %>
-<jsp:useBean id="user" class="office.User_account" scope="page" />
-<jsp:useBean id="reservationDAO" class="dao.ReservationDAO" scope="page" />
-<jsp:setProperty name="user" property="uEmail" />
-<jsp:setProperty name="user" property="uPassword" />
+<jsp:useBean id="user" class="office.User_account" scope="page" 
+id="reservationDAO" class="dao.ReservationDAO" scope="page" />
+<jsp:setProperty name="user" property="uEmail" property="uPassword" />
 <!DOCTYPE html>
 <html>
 <head>

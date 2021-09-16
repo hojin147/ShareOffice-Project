@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
 import="java.text.SimpleDateFormat"import="office.Reservation"
 import="office.User_account" import="java.sql.Date" %>
-<jsp:useBean id="reservationDAO" class="dao.ReservationDAO" scope="page" />
-<jsp:useBean id="userDAO" class="dao.UserDAO" scope="page" />
+<jsp:useBean id="reservationDAO" class="dao.ReservationDAO" scope="page"
+id="userDAO" class="dao.UserDAO" scope="page" />
 <%
 	request.setCharacterEncoding("UTF-8");
 	String type = request.getParameter("type");
