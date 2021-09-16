@@ -1,8 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="java.sql.*"%>
-<%@ page import="office.*"%>
-<%@ page import="java.util.ArrayList"%>
-<%@ page import="java.io.PrintWriter"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
+import="java.sql.*" import="office.*" import="java.util.ArrayList" import="java.io.PrintWriter"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <jsp:useBean id="userDAO" class="dao.UserDAO" scope="page" />
 <jsp:useBean id="companyDAO" class="dao.CompanyDAO" scope="page" />
@@ -128,27 +125,31 @@
 						<%
 							User_account user1 = userDAO.selectOneuser(cEmail);
 						%>
-
+						
+						<!-- 관리자로 로그인 시 관리자임을 알림 -->
 						<div class="wrap-input3 validate-input"
 							data-validate="Valid email is required: ex@abc.xyz">
 							<p style="font-size: 15px; color: white;">&nbsp;EMAIL</p>
 							<input class="input3" type="text" name="uEmail"
-								value="<%=user1.getuEmail()%>" required readonly> <span
-								class="focus-input3"></span>
+								value="<%= user1.getuType().equals("user") ? user1.getuEmail() : "관리자 모드입니다." %>"
+								required readonly>
+								<span class="focus-input3"></span>
 						</div>
 						<div class="wrap-input3 validate-input"
 							data-validate="Valid email is required: ex@abc.xyz">
 							<p style="font-size: 15px; color: white;">&nbsp;이름</p>
 							<input class="input3" type="text" name="uName"
-								value="<%=user1.getuName()%>" required readonly> <span
-								class="focus-input3"></span>
+								value="<%=user1.getuType().equals("user") ? user1.getuName() : "관리자 모드입니다."%>"
+								required readonly>
+								<span class="focus-input3"></span>
 						</div>
 						<div class="wrap-input3 validate-input"
 							data-validate="phone is required">
 							<p style="font-size: 15px; color: white;">&nbsp;연락처</p>
 							<input class="input3" type="text" name="uPhone"
-								value="<%=user1.getuPhone()%>" required readonly> <span
-								class="focus-input3"></span>
+								value="<%=user1.getuType().equals("user") ? user1.getuPhone() : "관리자 모드입니다."%>"
+								required readonly>
+								<span class="focus-input3"></span>
 						</div>
 						<%
 							userDAO.close();
@@ -157,14 +158,14 @@
 						<div class="wrap-input3 input3-select">
 							<p style="font-size: 15px; color: white;">&nbsp;기업명</p>
 							<input class="input3" type="text" name="cName"
-								value="<%=company.getcName()==null?"":company.getcName()%>"> <span
-								class="focus-input3"></span>
+								value="<%=company.getcName()==null?"":company.getcName()%>">
+								<span class="focus-input3"></span>
 						</div>
 						<div class="wrap-input3 input3-select">
 							<p style="font-size: 15px; color: white;">&nbsp;사업자등록번호</p>
 							<input class="input3" type="text" name="cBuznum"
-								value="<%=company.getcBuznum()==null?"":company.getcBuznum()%>"> <span
-								class="focus-input3"></span>
+								value="<%=company.getcBuznum()==null?"":company.getcBuznum()%>">
+								<span class="focus-input3"></span>
 						</div>
 
 						<div class="wrap-input3 input3-select">
