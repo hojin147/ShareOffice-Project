@@ -56,7 +56,8 @@ import="java.sql.*" import="office.User_account" %>
 								<button type="submit" class="form-control btn btn-primary rounded submit px-3">수정하기</button>
 							</div>
 							<div style="float: right; width: 47%" class="form-group">
-								<button type="button" class="form-control btn btn-primary rounded submit px-3" onclick="location.href='../pagemain/mainpage.jsp'">취소</button>
+								<button type="button" class="form-control btn btn-primary rounded submit px-3"
+								onclick="location.href='../pagemain/mainpage.jsp'">돌아가기</button>
 							</div>
 							<br><br>
 	          			</form>
