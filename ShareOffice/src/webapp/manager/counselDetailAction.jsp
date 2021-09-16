@@ -5,7 +5,7 @@ import="dao.CounselDAO" import="java.io.PrintWriter" %>
 <jsp:setProperty name="coun" property="sNum" />
 <!DOCTYPE html>
 <html>
-<head>
+<head> 
 	<meta charset="UTF-8">
 	<title>Counsel Detail</title>
 </head>
