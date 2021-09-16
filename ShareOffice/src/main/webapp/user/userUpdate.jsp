@@ -33,11 +33,15 @@ import="java.sql.*" import="office.User_account" %>
 								<input type="email" class="form-control rounded-left"name="uEmail" value="<%=user.getuEmail()%>" readonly>
 							</div>
 							<div class="form-group">
-								비밀번호<br>
+								기존 비밀번호<br>
+								<input type="password" class="form-control rounded-left" name="olduPassword" required>
+							</div>
+							<div class="form-group">
+								새 비밀번호<br>
 								<input type="password" class="form-control rounded-left" name="uPassword" required>
 							</div>
 							<div class="form-group">
-								비밀번호 확인<br>
+								새 비밀번호 확인<br>
 								<input type="password" class="form-control rounded-left" name="uPassword2" required>
 							</div>
 							<div class="form-group">
