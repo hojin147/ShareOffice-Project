@@ -59,26 +59,30 @@ pageEncoding="UTF-8" import="office.Counsel" %>
 								<td style="text-align: left;">답변 받을 email</td>
 							</tr>
 							<tr>
-								<td><input type="text" class="form-control" placeholder="답변받을 email" name="sUseremail" maxlength="50" value="<%=email%>" required readonly></td>
+								<td><input type="text" class="form-control" placeholder="답변받을 email"
+								name="sUseremail" maxlength="50" value="<%=email%>" required readonly></td>
 							</tr>
 							<tr>
 								<td style="text-align: left;">글 제목</td>
 							</tr>
 							<tr>
-								<td><input type="text" class="form-control" placeholder="글 제목" name="sSubject" maxlength="50" value="<%=subject%>"  required readonly></td>
+								<td><input type="text" class="form-control" placeholder="글 제목"
+								name="sSubject" maxlength="50" value="<%=subject%>"  required readonly></td>
 							</tr>
 							<tr>
 								<td style="text-align: left;">내용</td>
 							</tr>
 							<tr>
-								<td><textarea class="form-control" placeholder="글 내용" name="sContent" rows="15" maxlength="2048"  required readonly><%=content%></textarea></td>
+								<td><textarea class="form-control" placeholder="글 내용" name="sContent"
+								rows="15" maxlength="2048"  required readonly><%=content%></textarea></td>
 							</tr>
 						</tbody>
 					</table>
 					<div style="float:right;">
 						<input type="submit" class="btn btn-danger pull-right" value="삭제">
 						<a style="float:right;">&nbsp;</a>
-						<input type="button" class="btn btn-primary" value="돌아가기" onclick="location.href='../manager/counselManager.jsp'">
+						<input type="button" class="btn btn-primary" value="돌아가기"
+						onclick="location.href='../manager/counselManager.jsp'">
 					</div>
 				</form>
 			</div>
