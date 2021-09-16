@@ -120,6 +120,3 @@ import="office.Reservation" import="office.User_account" import="java.sql.*" %>
 	
 </script>
 </html>
-
-
-

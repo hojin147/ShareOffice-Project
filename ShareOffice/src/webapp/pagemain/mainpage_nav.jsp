@@ -11,7 +11,8 @@ import="office.User_account" import="dao.UserDAO"%>
 	System.out.println(user.getuType());
 %>
 
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" style=" padding-bottom: 5px; padding-top: 5px;">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top"
+id="mainNav" style=" padding-bottom: 5px; padding-top: 5px;">
 	<div class="container" style="font-size:32px;">
 		<a class="navbar-brand" href="../pagemain/mainpage.jsp">OU</a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"

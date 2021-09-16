@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
-import="office.Counsel" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8" import="office.Counsel" %>
 <jsp:useBean id="counselDAO" class="dao.CounselDAO" scope="page" />
 <!DOCTYPE html>
 <html lang="ko">

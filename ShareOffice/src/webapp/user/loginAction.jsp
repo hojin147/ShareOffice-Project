@@ -24,6 +24,7 @@ import="dao.UserDAO" import="office.User_account" import="java.io.PrintWriter" %
 		if(result == 1) {
 			session.setAttribute("uEmail", user.getuEmail());
 			User_account isAdmin = userDAO.selectOneuser(user.getuEmail());
+			//관리자로 로그인 시 업데이트 작업 자동 수행
 			if(isAdmin.getuType().equals("admin")) reservationDAO.refreshReservationTable();
 			script.println("<script>");
 			script.println("location.href = '../pagemain/mainpage.jsp'");

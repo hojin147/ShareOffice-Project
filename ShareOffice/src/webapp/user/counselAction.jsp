@@ -1,9 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
-import="dao.CounselDAO" import="java.io.PrintWriter" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8" import="dao.CounselDAO" import="java.io.PrintWriter" %>
 <%request.setCharacterEncoding("UTF-8"); %>
 <jsp:useBean id="coun" class="office.Counsel" scope="page" />
-<jsp:setProperty name="coun" property="sUseremail" 
-property="sSubject" property="sContent" />
+<jsp:setProperty name="coun" property="sUseremail" />
+<jsp:setProperty name="coun" property="sSubject" />
+<jsp:setProperty name="coun" property="sContent" />
 <!DOCTYPE html>
 <html>
 <head>

@@ -3,8 +3,10 @@ import="dao.UserDAO" import="java.io.PrintWriter"%>
 <%request.setCharacterEncoding("UTF-8");%>
 <jsp:useBean id="user" class="office.User_account" scope="page" />
 <jsp:useBean id="userDAO" class="dao.UserDAO" scope="page" />
-<jsp:setProperty name="user" property="uEmail" property="uPassword"
-property="uName" property="uPhone" />
+<jsp:setProperty name="user" property="uEmail" />
+<jsp:setProperty name="user" property="uPassword" />
+<jsp:setProperty name="user" property="uName" />
+<jsp:setProperty name="user" property="uPhone" />
 <%
 	PrintWriter script = response.getWriter();
 	int result = userDAO.deleteUser(user);

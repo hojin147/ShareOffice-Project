@@ -116,7 +116,6 @@ import="office.Reservation" import="java.util.*"%>
 						</thead>
 						<tbody>
 							<%
-
 								ArrayList<Reservation> reservationArr = reservationDAO.selectReservationlOnWait();
 							%>
 							<c:forEach var="reservation" items="<%=reservationArr%>" varStatus="status">
